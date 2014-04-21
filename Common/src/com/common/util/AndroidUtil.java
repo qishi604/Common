@@ -6,6 +6,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
 import android.widget.Toast;
 
 public final class AndroidUtil {
@@ -56,6 +58,11 @@ public final class AndroidUtil {
 
 	public static void toastL(Context context, int msgRes) {
 		toast(context, msgRes, Toast.LENGTH_LONG);
+	}
+	
+	public static Point getScreenWH(Context context) {
+		DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+		return new Point(metrics.widthPixels, metrics.heightPixels);
 	}
 	
 	/**
